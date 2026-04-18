@@ -16,6 +16,7 @@ import CopyBlock from '../../blocks/about.copy.block'
 import about from '../../../styles/sections/index/about.module.scss'
 
 import content from '../../../content/index/technical.json'
+import { publicPath } from '../../../lib/publicPath'
 
 /**
  * Section: Technical — “How I ship”, stack badges, decorative graphic on the right.
@@ -62,7 +63,7 @@ export default function Technical() {
 					<div className={`${about.image} ${about.technicalSvg}`}>
 						<div className={about.technicalImageInner}>
 							<Image
-								src="/img/dataism-24.svg"
+								src={publicPath('/img/dataism-24.svg')}
 								width={477}
 								height={1111}
 								alt="Data Strings 01 by Colorpong: https://ywft.us/2177b695b"

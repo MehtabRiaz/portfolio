@@ -25,6 +25,8 @@ const nextConfig = {
 	assetPrefix: bp || undefined,
 	env: {
 		dir: '/',
+		/** Inlined for `lib/publicPath.js` and client bundles (must match `basePath`). */
+		NEXT_PUBLIC_BASE_PATH: bp,
 	},
 	images: {
 		unoptimized: true,

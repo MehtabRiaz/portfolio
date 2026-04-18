@@ -14,6 +14,7 @@ import CopyBlock from '../../blocks/about.copy.block'
 
 // Section scss
 import about from '../../../styles/sections/index/about.module.scss';
+import { publicPath } from '../../../lib/publicPath';
 
 /**
  * Section: About
@@ -35,7 +36,7 @@ export default function About() {
 					<div className={about.image}>
 						<div className={about.imageFrame}>
 							<Image
-								src="/img/mehtab-profile.png"
+								src={publicPath('/img/mehtab-profile.png')}
 								alt="Mehtab Riaz"
 								fill
 								className={about.profileImage}

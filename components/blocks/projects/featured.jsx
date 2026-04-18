@@ -8,6 +8,7 @@ import Badges 		from '../../utils/badge.list.util'
 import Icon 		from '../../utils/icon.util'
 
 import css 			from '../../../styles/sections/projects/featured.module.scss'
+import { publicPath } from '../../../lib/publicPath'
 
 export default function FeaturedProject({ content }, index) {
 
@@ -85,8 +86,9 @@ export default function FeaturedProject({ content }, index) {
 			>
 				<span className={`${css.imageAnimationContainer}`}>
 					{ images.map( ({key, url: imageSrc, hover, h, w, unoptimized }, index) => {
+						const resolvedSrc = publicPath(imageSrc)
 						hover = ( hover === 'left' ) ? hoverLeft : hoverRight
-						const isSvg = String(imageSrc).toLowerCase().endsWith('.svg')
+						const isSvg = String(resolvedSrc).toLowerCase().endsWith('.svg')
 						const nw = Number(w)
 						const nh = Number(h)
 						const ratioStyle =
@@ -97,7 +99,7 @@ export default function FeaturedProject({ content }, index) {
 							<m.div key={`${index}-${key}`} variants={item}>
 								<m.div variants={hover}>
 									<Image
-										src={imageSrc}
+										src={resolvedSrc}
 										alt={`${project} product preview`}
 										height={nh}
 										width={nw}

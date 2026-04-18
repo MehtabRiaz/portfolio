@@ -33,13 +33,16 @@ import '../styles/css/global.css'
  * @returns
  */
 export default function MyApp({ Component, pageProps }) {
+	/** Vercel-only; GitHub Pages has no `/_vercel/insights` and would 404. */
+	const showVercelAnalytics = Boolean(process.env.NEXT_PUBLIC_VERCEL_URL)
+
 	return (
 		<>
 		<LazyMotion features={domAnimation}>
 			<Layout>
 				<Component {...pageProps} />
 				<SetGridGap />
-				<Analytics />
+				{showVercelAnalytics ? <Analytics /> : null}
 			</Layout>
 		</LazyMotion>
 		</>
