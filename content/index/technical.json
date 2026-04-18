@@ -1,0 +1,24 @@
+{
+	"title": "Technical",
+	"preTitle": "Engineering",
+	"subTitle": "How I ship production features, and the technologies I rely on for data-heavy interfaces and realtime systems.",
+	"intro": {
+		"title": "How I ship",
+		"icon": ["fat", "chart-network"],
+		"copy": "I gravitate toward ambiguous, high-traffic problems: performance on dense screens, reliable realtime delivery, and clear contracts between product, compliance, and engineering."
+	},
+	"stackTitle": "Technologies I use",
+	"stackCopy": "Stack varies by product—this is what most of my recent shipping work looks like.",
+	"stackBadges": [
+		{ "key": "vuejs", "name": "Vue", "type": "devicon" },
+		{ "key": "nuxtjs", "name": "Nuxt", "type": "devicon" },
+		{ "key": "typescript", "name": "TypeScript", "type": "devicon" },
+		{ "key": "rails", "name": "Rails", "type": "devicon" },
+		{ "key": "postgresql", "name": "PostgreSQL", "type": "devicon" },
+		{ "key": "redis", "name": "Redis", "type": "devicon" },
+		{ "key": "amazonwebservices", "name": "AWS", "type": "devicon" },
+		{ "key": "docker", "name": "Docker", "type": "devicon" },
+		{ "key": "nodejs", "name": "Node.js", "type": "devicon" },
+		{ "key": "react", "name": "React", "type": "devicon" }
+	]
+}

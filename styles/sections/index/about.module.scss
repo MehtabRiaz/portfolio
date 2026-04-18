@@ -1,0 +1,282 @@
+@import '../../scss/mixins';
+
+// Section
+.section {
+
+	.content {
+		$padding: 2rem;
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		gap: 1rem;
+
+		> div {
+			padding: 0;
+		}
+
+		h3 {
+			position: relative;
+			color: var(--primary);
+
+			// &:before {
+			// 	content: '';
+			// 	position: absolute;
+			// 	left: calc( $padding * -1 );
+			// 	width: 18px;
+			// 	aspect-ratio: 1/1;
+			// 	background-color: var(--primary-bright);
+			// 	border-radius: 99rem;
+			// 	border: 3px solid var(--background);
+			// 	top: 50%;
+			// 	transform: translate(-50%, -50%);
+			// }
+
+			// &:after {
+			// 	content: '';
+			// 	position: absolute;
+			// 	left: calc( $padding * -1 );
+			// 	width: 9px;
+			// 	aspect-ratio: 1/1;
+			// 	background-color: var(--background);
+			// 	border-radius: 99rem;
+			// 	top: 50%;
+			// 	transform: translate(-50%, -50%);
+			// }
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			gap: var(--size-1x);
+			border: 1px solid var(--primary-dark);
+			border-radius: 2rem;
+			background: var(--background-dim2);
+			box-shadow: 0 0 30px var(--background);
+			overflow: hidden;
+
+			padding: var(--padding);
+			--padding: 2rem;
+			--padding-left: var(--padding);
+			--padding-top: var(--padding);
+			--padding-right: var(--padding);
+			--padding-bottom: var(--padding);
+
+			&:not(:last-of-type) {
+				margin-bottom: var(--size-1x);
+			}
+		}
+
+		.copy {
+			z-index: 1;
+			flex-basis: calc(60% + 1px);
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&.technicalWithArt {
+			gap: clamp(1rem, 2.5vw, 2rem);
+
+			.copy {
+				flex-basis: 48%;
+				flex-shrink: 1;
+			}
+
+			.image.technicalSvg {
+				flex-basis: 56%;
+				flex-grow: 1.15;
+				min-width: 0;
+			}
+		}
+
+		&.experienceStack {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 0;
+
+			.copy {
+				flex-basis: auto;
+				max-width: 52rem;
+				margin-inline: auto;
+				width: 100%;
+			}
+		}
+
+		.experienceMeta {
+			margin: 0.35rem 0 0;
+			color: var(--primary-bright);
+			font-size: 1.15rem;
+			line-height: 1.35;
+		}
+
+		.experienceLocation {
+			margin: 0.25rem 0 0.75rem;
+			color: var(--primary-dim);
+			font-size: 1rem;
+		}
+
+		.experienceList {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			color: var(--primary-dim);
+			font-size: 1.05rem;
+			line-height: 1.45;
+
+			li + li {
+				margin-top: 0.5rem;
+			}
+		}
+
+		.icon {
+			padding: 0.5rem;
+			display: flex;
+			align-items: center;
+			background: var(--primary-dark);
+			width: fit-content;
+			border-radius: 0.5rem;
+			aspect-ratio: 1;
+
+			svg {
+				height: 1.6rem;
+				color: var(--primary);
+
+				path {
+					fill: url(#fa-gradient) #fff;
+				}
+			}
+
+
+		}
+		
+		// Columns — portrait fills column height (matches tall copy stack)
+		.image {
+			flex-basis: 50%;
+			flex-grow: 1;
+			flex-shrink: 1;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
+
+			.technicalImageInner {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				width: 100%;
+				flex: 1 1 auto;
+				min-height: min(82vh, 58rem);
+				max-height: min(92vh, 68rem);
+
+				:global(span) {
+					position: relative !important;
+					display: flex !important;
+					align-items: center;
+					justify-content: flex-end;
+					width: 100% !important;
+					height: 100% !important;
+					max-height: min(88vh, 64rem);
+				}
+			}
+
+			.technicalSvgImg {
+				width: auto !important;
+				max-width: 100%;
+				height: auto !important;
+				max-height: min(88vh, 64rem);
+				object-fit: contain;
+				object-position: 35% center;
+			}
+
+			.imageFrame {
+				position: relative;
+				flex: 1 1 auto;
+				width: 100%;
+				min-height: 18rem;
+				border-radius: 2rem;
+				overflow: hidden;
+			}
+
+			.profileImage {
+				object-fit: cover !important;
+				object-position: center 18%;
+			}
+
+			&.technicalSvg {
+				justify-content: center;
+				z-index: 0;
+
+				img {
+					filter: brightness(100%);
+				}
+			}
+		}
+	}
+}
+
+@include media($max: $mobile) {
+	.section {
+		.content {
+			flex-direction: column;
+
+			> div {
+				flex-basis: 100% !important;
+			}
+
+			&.experienceStack .copy {
+				max-width: none;
+			}
+
+			.container {
+				padding: 2rem 1.25rem;
+			}
+
+			.image {
+				padding: 1rem;
+				min-height: 22rem;
+
+				.imageFrame {
+					min-height: 20rem;
+				}
+
+				.technicalImageInner {
+					min-height: 16rem;
+					max-height: 28rem;
+					justify-content: center;
+
+					:global(span) {
+						max-height: 28rem;
+						justify-content: center;
+					}
+				}
+
+				.technicalSvgImg {
+					max-height: 26rem;
+					object-position: center center;
+				}
+
+				&.technicalSvg {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					height: auto;
+					min-height: 20rem;
+					max-height: 48vh;
+					width: 100%;
+					z-index: 0;
+					pointer-events: none;
+					opacity: 0.35;
+					justify-content: center;
+				}
+			}
+
+			.copy {
+				padding: 0;
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+}

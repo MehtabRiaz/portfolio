@@ -1,0 +1,65 @@
+{
+	"sectionTitles": {
+		"links": "Resources",
+		"social": "Social"
+	},
+	"epitaph": {
+		"kicker": "© 2026 Mehtab Riaz",
+		"line": "This site is built with Next.js and hosted on Vercel.",
+		"mono": "Vue · Nuxt · TypeScript · Ruby on Rails · PostgreSQL · AWS"
+	},
+	"links": [
+		{
+			"person": "The Tie — Terminal",
+			"link": "https://thetie.io/solutions/terminal",
+			"note": "Institutional crypto workspace for screeners, alerts, watchlists, and dashboards."
+		},
+		{
+			"person": "Bridge by The Tie",
+			"link": "https://chat.thetie.io/",
+			"note": "Enterprise communication product with realtime messaging and compliance-oriented features."
+		},
+		{
+			"person": "Realtime collaborative editor — GitHub",
+			"link": "https://github.com/MehtabRiaz/Real-time-Collaborative-Editor",
+			"note": "MERN monorepo: React, Node.js, MongoDB, WebSockets, and Yjs (CRDT) for multi-user editing, presence, and document ACL."
+		},
+		{
+			"person": "Sign language detector (0–10) — GitHub",
+			"link": "https://github.com/MehtabRiaz/Sign-Language-Detector-for-Numbers-0-10-",
+			"note": "Real-time TensorFlow object detection for hand gestures, trained with transfer learning."
+		},
+		{
+			"person": "C-- language parser — GitHub",
+			"link": "https://github.com/MehtabRiaz/C---Language-Parser",
+			"note": "C++ console tool: tokenization, symbol table, identifiers, and parse tree for a C-- subset."
+		},
+		{
+			"person": "Vehicle commission agents — GitHub",
+			"link": "https://github.com/MehtabRiaz/Vehicle-Commission-Agents",
+			"note": "Electron + Vue desktop app for bike sale and purchase workflows."
+		}
+	],
+	"social": [
+		{
+			"url": "https://x.com/mehtab_ria73583",
+			"icon": "x-twitter"
+		},
+		{
+			"url": "https://dev.to/mehtab_riaz_bdb7e6c61115f",
+			"icon": "dev"
+		},
+		{
+			"url": "https://www.linkedin.com/in/mehtab-riaz/",
+			"icon": "linkedin"
+		},
+		{
+			"url": "https://github.com/mehtab-riaz",
+			"icon": "github"
+		},
+		{
+			"url": "https://github.com/MehtabRiaz",
+			"icon": "square-github"
+		}
+	]
+}

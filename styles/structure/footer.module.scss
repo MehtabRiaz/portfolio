@@ -1,0 +1,148 @@
+@import '../scss/_mixins';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	
+	> div {
+		display: flex;
+		flex-direction: column;
+		gap: var(--size-3x);
+	}
+
+	h4 {
+		margin-bottom: var(--size-1x);
+	}
+
+	a {
+		font-size: .875rem;
+		font-weight: 600;
+		color: var(--primary);
+
+		&:hover {
+			color: var(--primary-bright);
+		}
+	}
+
+	p {
+		font-size: .875rem;
+	}
+
+	.sections {
+		$gap: 2rem;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: $gap;
+
+		svg {
+			height: .875rem;
+			vertical-align: -0.1rem;
+			margin-left: .125rem;
+		}
+
+		.resources {
+			flex: 1 1 auto;
+			min-width: 0;
+		}
+
+		.resourcesHeading {
+			margin-bottom: var(--size-1x);
+		}
+
+		.resourcesGrid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: $gap;
+		}
+
+		.linksColumn {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				overflow-wrap: break-word;
+				margin-bottom: var(--size-2-);
+			}
+		}
+
+		.social {
+			flex: 0 0 auto;
+			min-width: min(100%, 12rem);
+		}
+	}
+
+	.socialList {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+
+		svg {
+			height: 2rem;
+		}
+	}
+
+	.creditName {
+		display: inline-block;
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--primary-bright);
+		letter-spacing: -0.01em;
+	}
+
+	.epitaph {
+		margin-top: var(--size-3x);
+		padding-top: var(--size-2x);
+		border-top: 1px solid var(--primary-dark);
+		text-align: center;
+	}
+
+	.epitaphKicker {
+		font-family: var(--font-accent);
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--primary-dim);
+		margin: 0 0 var(--size-1x);
+	}
+
+	.epitaphLine {
+		font-size: 1rem;
+		line-height: 1.55;
+		color: var(--primary);
+		margin: 0 auto var(--size-1x);
+		max-width: 28rem;
+	}
+
+	.epitaphMono {
+		font-family: var(--font-accent);
+		font-size: 0.78rem;
+		font-weight: 500;
+		color: var(--secondary);
+		margin: 0;
+		opacity: 0.9;
+	}
+}
+
+@include media($max: $mobile) {
+	.container {
+		.sections {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 3rem;
+			text-align: center;
+
+			.resourcesGrid {
+				grid-template-columns: 1fr;
+				text-align: left;
+			}
+
+			.socialList {
+				justify-content: center;
+			}
+		}
+	}
+}

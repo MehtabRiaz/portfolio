@@ -1,0 +1,71 @@
+[
+	{
+		"project": "Bridge by The Tie",
+		"url": "https://chat.thetie.io/",
+		"repo": "Private",
+		"descriptionTitle": "Enterprise communication platform",
+		"description": "Cross-platform messenger (web, mobile, desktop) with real-time WebSockets, WebRTC voice, Auth0 and multi-tier RBAC, plus audit trails and retention aligned with SOX, FINRA, and GDPR.",
+		"imageOptions": [
+			{ "key": "layout", "value": "centerProminent" }
+		],
+		"images": [
+			{ "key": "bridge", "hover": "right", "h": "602", "w": "415", "url": "/img/projects/bridge-tablet.png", "unoptimized": true }
+		],
+		"stack": [
+			{ "key": "nuxtjs", "name": "Nuxt 3", "type": "devicon" },
+			{ "key": "vuejs", "name": "Vue 3", "type": "devicon" },
+			{ "key": "typescript", "name": "TypeScript", "type": "devicon" },
+			{ "key": "socketio", "name": "WebSockets", "type": "devicon" },
+			{ "key": "postgresql", "name": "PostgreSQL", "type": "devicon" },
+			{ "key": "graphql", "name": "GraphQL", "type": "devicon" },
+			{ "key": "docker", "name": "Docker", "type": "devicon" },
+			{ "key": "tailwindcss", "name": "Tailwind", "type": "devicon" }
+		]
+	},
+	{
+		"project": "Frosty Metrics",
+		"url": "https://frostymetrics.com/",
+		"repo": "Public",
+		"descriptionTitle": "Avalanche analytics platform",
+		"description": "Live analytics for DeFi, NFTs, gaming, and subnets with interactive time-series dashboards—and the Chill Factor score summarizing on-chain engagement.",
+		"imageOptions": [
+			{ "key": "size", "value": "large" },
+			{ "key": "layout", "value": "center" }
+		],
+		"images": [
+			{ "key": "frosty", "hover": "left", "h": "1024", "w": "830", "url": "/img/projects/frosty-metrics.png", "unoptimized": true }
+		],
+		"stack": [
+			{ "key": "nuxtjs", "name": "Nuxt 3", "type": "devicon" },
+			{ "key": "vuejs", "name": "Vue 3", "type": "devicon" },
+			{ "key": "typescript", "name": "TypeScript", "type": "devicon" },
+			{ "key": "nodejs", "name": "Nitro / Node", "type": "devicon" },
+			{ "key": "d3js", "name": "Data viz", "type": "devicon" },
+			{ "key": "tailwindcss", "name": "Tailwind", "type": "devicon" },
+			{ "key": "docker", "name": "Docker", "type": "devicon" }
+		]
+	},
+	{
+		"project": "The Tie Terminal",
+		"url": "https://www.thetie.io/solutions/terminal",
+		"repo": "Private",
+		"descriptionTitle": "Institutional crypto data terminal",
+		"description": "Screeners, watchlists, alerts, and AI-assisted dashboards over live streams—optimizing heavy grids, search, and Core Web Vitals for professional traders.",
+		"imageOptions": [
+			{ "key": "layout", "value": "center" }
+		],
+		"images": [
+			{ "key": "terminal", "hover": "right", "h": "1024", "w": "830", "url": "/img/projects/tie-terminal-hero.png", "unoptimized": true }
+		],
+		"stack": [
+			{ "key": "nuxtjs", "name": "Nuxt 3", "type": "devicon" },
+			{ "key": "vuejs", "name": "Vue 3", "type": "devicon" },
+			{ "key": "rails", "name": "Ruby on Rails", "type": "devicon" },
+			{ "key": "postgresql", "name": "PostgreSQL", "type": "devicon" },
+			{ "key": "redis", "name": "Redis", "type": "devicon" },
+			{ "key": "amazonwebservices", "name": "AWS", "type": "devicon" },
+			{ "key": "typescript", "name": "TypeScript", "type": "devicon" },
+			{ "key": "graphql", "name": "GraphQL", "type": "devicon" }
+		]
+	}
+]

@@ -1,0 +1,40 @@
+{
+	"title": "Experience",
+	"preTitle": "Career",
+	"subTitle": "Production SaaS, real-time crypto data, and enterprise communications—shipping end-to-end from UI through APIs, data stores, and cloud deploys.",
+	"roles": [
+		{
+			"company": "Strategic Systems International",
+			"role": "Senior Full-Stack Engineer",
+			"period": "Jul 2022 – Present",
+			"location": "Lahore, Pakistan · Remote-friendly",
+			"highlights": [
+				"The Tie Terminal — screeners, watchlists, alerts, and AI-assisted dashboards for institutional crypto clients.",
+				"Vue 3 / Nuxt 3 + Ruby on Rails + PostgreSQL + Elasticsearch; Core Web Vitals and heavy grid UX.",
+				"Realtime alerts (Discord, Telegram, email, on-site), WebSockets, GitHub Actions, Docker, AWS (Lambda, EC2, RDS)."
+			]
+		},
+		{
+			"company": "Devsinc",
+			"role": "Assistant Software Engineer",
+			"period": "Jan 2022 – Jul 2022",
+			"location": "Lahore, Pakistan",
+			"highlights": [
+				"Hotel management SaaS on Ruby on Rails — bookings, payments, multi-role access, REST integrations.",
+				"Query and indexing work across MySQL and PostgreSQL to cut latency on reporting paths.",
+				"MongoDB/Firebase integrations and automation with Python Selenium / MS Web Scraper."
+			]
+		},
+		{
+			"company": "Freelance",
+			"role": "Software Engineer",
+			"period": "Jan 2021 – Dec 2021",
+			"location": "Lahore, Pakistan · Remote & on-site with clients",
+			"highlights": [
+				"Cross-platform desktop apps with Electron.js for local businesses.",
+				"Barcode scanning and point-of-sale (POS) flows in Flutter.",
+				"Model training and fine-tuning for Roman Urdu text—including dataset work from reading papers and coordinating with authors across roughly 50 research publications."
+			]
+		}
+	]
+}
