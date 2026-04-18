@@ -1,7 +1,6 @@
 import Section 		from '../../structure/section';
 import Container 	from '../../structure/container';
 
-import Image from 'next/image'
 import SectionTitle from '../../blocks/section.title.block'
 
 import Icon from '../../utils/icon.util'
@@ -9,9 +8,7 @@ import Icon from '../../utils/icon.util'
 import css from '../../../styles/sections/articles/recent.module.scss'
 
 export default function Recent({ mediumArticles }) {
-
-	const feed 		= mediumArticles.feed
-	const articles 	= mediumArticles.items
+	const articles = Array.isArray(mediumArticles?.items) ? mediumArticles.items : []
 
 	return (
 		<Section classProp="borderBottom">
@@ -23,7 +20,7 @@ export default function Recent({ mediumArticles }) {
 				/>
 				<section className={css.projects}>
 					{
-					articles.map( ({ title, pubDate, link, author, thumbnail, categories }, index) => {
+					articles.length ? articles.map( ({ title, pubDate, link, author, thumbnail, categories }, index) => {
 						const date = new Date(pubDate).toDateString()
 						return (
 							<>
@@ -42,7 +39,7 @@ export default function Recent({ mediumArticles }) {
 								</span>
 								<span className={css.topicsContainer}>
 									{
-									categories.map( (e, index) => {
+									(categories || []).map( (e, index) => {
 										return ( <span key={index} className={css.topics}><Icon icon={[ 'fab', 'medium' ]} /> {e}</span> )
 									})
 									}
@@ -50,7 +47,9 @@ export default function Recent({ mediumArticles }) {
 							</article>
 							</>
 						)
-					})
+					}) : (
+						<p className={css.emptyNote}>No articles loaded (build-time fetch failed or feed is empty).</p>
+					)
 					}
 				</section>
 			</Container>

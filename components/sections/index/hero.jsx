@@ -6,8 +6,6 @@ import Container 	from '../../structure/container';
 
 import space		from '../../utils/spacing.util';
 
-import Icon 		from '../../utils/icon.util'
-
 import HeroBg		from '../../blocks/hero.bg/bg-color-1';
 
 import hero 		from '../../../styles/sections/index/hero.module.scss';

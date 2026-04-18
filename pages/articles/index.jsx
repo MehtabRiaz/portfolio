@@ -1,39 +1,36 @@
-import { useState, useEffect } from "react"
+import Recent from '../../components/sections/articles/recent'
 
-import Recent 		from '../../components/sections/articles/recent'
+import Color from '../../components/utils/page.colors.util'
 
-import Color 	from '../../components/utils/page.colors.util'
+import colors from '../../content/articles/_colors.json'
+import settings from '../../content/_settings.json'
 
-import colors 		from '../../content/articles/_colors.json'
-import settings 	from '../../content/_settings.json'
-
-//
 export default function Articles({ mediumArticles }) {
 	return (
 		<>
 			<Color colors={colors} />
-			<Recent mediumArticles={mediumArticles}/>
+			<Recent mediumArticles={mediumArticles} />
 		</>
 	)
 }
 
-// This gets called on every request
-export async function getServerSideProps({ res }) {
+const emptyFeed = { feed: {}, items: [] }
 
-	res.setHeader(
-		'Cache-Control',
-		'public, s-maxage=600, stale-while-revalidate=59'
-	)
+/** Static export (GitHub Pages): Medium feed is fetched at build time. Re-push to refresh. */
+export async function getStaticProps() {
+	let mediumArticles = emptyFeed
 
-	console.log(settings.username.medium)
-
-	const [ mediumRSS ] = await Promise.all( [
-		fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/${settings.username.medium}`),
-	] )
-	
-	let [ mediumArticles ] = await Promise.all( [
-		mediumRSS.json(),
-	] )
+	try {
+		const mediumRSS = await fetch(
+			`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/${settings.username.medium}`
+		)
+		const json = await mediumRSS.json()
+		if (json?.items && Array.isArray(json.items)) {
+			mediumArticles = json
+		}
+	} catch (e) {
+		console.error('Medium / rss2json fetch failed:', e)
+	}
 
 	return { props: { mediumArticles } }
 }

@@ -9,10 +9,14 @@ import Icon from '../../utils/icon.util'
 import css from '../../../styles/sections/projects/recent.module.scss'
 
 export default function GitProjects({ repos, user }) {
+	const hasUser = Array.isArray(user) && user.length > 0
+	const hasRepos = Array.isArray(repos) && repos.length > 0
+
 	return (
 		<Section classProp={css.section}>	
 			<Container classProp={css.container} spacing={'verticalXXXLrg'}>
 				<h3>Recent Projects</h3>
+				{hasUser ? (
 				<section className={css.profile}>
 					<Image className={css.profilePhoto} src={`${user[0].avatar_url}`} alt="Github Profile Photo" height={60} width={60}/>
 					<span class={css.details}>
@@ -20,9 +24,12 @@ export default function GitProjects({ repos, user }) {
 						<a href={user[0].html_url} rel="noreferrer" target="_blank">{user[0].html_url} <Icon icon={[ 'far', 'arrow-up-right-from-square' ]} /></a>
 					</span>
 				</section>
+				) : (
+				<p className={css.loadNote}>GitHub profile could not be loaded (offline build or API limit). Featured work above is still available.</p>
+				)}
 				<div className={css.projects}>
 					{
-					repos.map( ({ name, description, topics, html_url, language, homepage, pushed_at }, index) => {
+					hasRepos ? repos.map( ({ name, description, topics, html_url, language, homepage, pushed_at }, index) => {
 						const date = new Date(pushed_at).toDateString()
 						return (
 							<>
@@ -35,7 +42,7 @@ export default function GitProjects({ repos, user }) {
 									<p className={css.description}>{description}</p>
 								</span>
 								<span className={css.details}>
-									<p><i className={`devicon-${language.toLowerCase()}-plain colored`} /> {language}</p>
+									<p><i className={`devicon-${(language || 'github').toLowerCase()}-plain colored`} /> {language || '—'}</p>
 									<p className={css.pushedAt}>{date}</p>
 								</span>
 								<span className={css.topicsContainer}>
@@ -48,7 +55,9 @@ export default function GitProjects({ repos, user }) {
 							</article>
 							</>
 						)
-					})
+					}) : (
+						<p className={css.loadNote}>No public repositories loaded.</p>
+					)
 					}
 				</div>
 				{/*
