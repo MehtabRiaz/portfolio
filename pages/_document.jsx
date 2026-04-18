@@ -4,21 +4,25 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import { publicPath } from '../lib/publicPath'
 
 /**
- * Load custom scripts in <Head>
- * 
- * @returns <Html>
+ * Favicon: circular SVG with JPEG inlined as data URI (external bitmaps in SVG
+ * favicons are blocked in Chromium). JPEG link is fallback. publicPath() for basePath.
  */
 export default function Document() {
+	const faviconSvg = publicPath('/favicon/favicon.svg')
+	const faviconJpeg = publicPath('/favicon/favicon-32x32.jpeg')
+	const pinned = publicPath('/favicon/safari-pinned-tab.svg')
+
 	return (
 		<Html lang="en">
 			<Head>
-				<link rel="apple-touch-icon" sizes="180x180" href={publicPath('/favicon/apple-touch-icon.png')} />
-				<link rel="icon" type="image/png" sizes="32x32" href={publicPath('/favicon/favicon-32x32.png')} />
-				<link rel="icon" type="image/png" sizes="16x16" href={publicPath('/favicon/favicon-16x16.png')} />
+				<link rel="icon" href={faviconSvg} type="image/svg+xml" />
+				<link rel="icon" href={faviconJpeg} type="image/jpeg" sizes="32x32" />
+				<link rel="shortcut icon" href={faviconSvg} type="image/svg+xml" />
+				<link rel="apple-touch-icon" href={faviconSvg} />
 				<link rel="manifest" href={publicPath('/favicon/site.webmanifest')} />
-				<link rel="mask-icon" href={publicPath('/favicon/safari-pinned-tab.svg')} color="#5bbad5" />
+				<link rel="mask-icon" href={pinned} color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
-				<meta name="theme-color" content="#ffffff" />
+				<meta name="theme-color" content="#0e0f11" />
 			</Head>
 			<body>
 				<Main />

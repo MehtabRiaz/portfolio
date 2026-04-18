@@ -1,4 +1,5 @@
 // Core packages
+import Head from 'next/head'
 import { Analytics } from '@vercel/analytics/react';
 import { LazyMotion, domAnimation } from "framer-motion"
 
@@ -38,6 +39,9 @@ export default function MyApp({ Component, pageProps }) {
 
 	return (
 		<>
+		<Head>
+			<title>Mehtab Riaz</title>
+		</Head>
 		<LazyMotion features={domAnimation}>
 			<Layout>
 				<Component {...pageProps} />
