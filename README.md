@@ -7,7 +7,7 @@ Personal developer portfolio built with **Next.js** (Pages Router), **React**, a
 - **Node.js** 18+ (20 LTS recommended)
 - **npm** (or compatible client)
 
-### Icons (Font Awesome Free)
+### Icons (Font Awesome)
 
 Icons use **`@fortawesome/free-solid-svg-icons`**, **`free-regular-svg-icons`**, and **`free-brands-svg-icons`** only—no paid Pro subscription or npm token. `components/utils/icon.util.jsx` maps older Pro-style prefixes (`fad`, `fat`, `fal`) to **solid** so existing content keeps working.
 
