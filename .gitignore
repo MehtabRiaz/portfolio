@@ -120,3 +120,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Personal résumé / exports (PII — keep out of the remote)
+Mehtab_Riaz*.docx
